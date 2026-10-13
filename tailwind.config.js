@@ -22,6 +22,7 @@ export default {
       },
       fontFamily: {
         skate: ['Impact', 'Haettenschweiler', "'Arial Black'", 'sans-serif'],
+        wheel: ['Oswald', "'Arial Narrow'", 'Impact', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       boxShadow: {
