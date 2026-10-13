@@ -1,14 +1,11 @@
 import { useState, type FormEvent } from 'react'
+import { LINKS, PROFILE } from '../../data/profile'
 import { PanelHeader } from '../PanelHeader'
-
-const SOCIALS = [
-  { kind: 'GIT', label: 'GITHUB', href: 'https://github.com', external: true },
-  { kind: 'NET', label: 'LINKEDIN', href: 'https://linkedin.com', external: true },
-  { kind: 'DIRECT', label: 'EMAIL', href: 'mailto:alex@rivers-skate.dev', external: false },
-]
 
 const INPUT_CLASS =
   'w-full bg-black/80 border border-neutral-700 focus:border-cyan-400 focus:ring-0 text-sm rounded px-3 py-1.5 text-white placeholder-gray-600 font-mono'
+
+const visibleLinks = LINKS.filter((l) => l.href !== '')
 
 export function ContactPanel() {
   const [sent, setSent] = useState(false)
@@ -23,7 +20,7 @@ export function ContactPanel() {
     <div className="space-y-3">
       <PanelHeader
         title="2 PLAYER: MULTIPLAYER CO-OP"
-        subtitle="Match Lobby: Start a Project Together"
+        subtitle={`Match Lobby: Start a Project with ${PROFILE.firstName}`}
         titleClass="text-cyan-300"
         badge={
           <span className="px-2 py-0.5 bg-cyan-600 text-black font-mono text-[10px] rounded font-bold">1P vs 2P</span>
@@ -85,19 +82,24 @@ export function ContactPanel() {
         </button>
       </form>
 
-      <div className="grid grid-cols-3 gap-2 text-center font-mono text-xs">
-        {SOCIALS.map((s) => (
-          <a
-            key={s.label}
-            href={s.href}
-            {...(s.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className="p-2 bg-[#1b2027] hover:bg-[#252c36] rounded border border-gray-700 block transition-colors"
-          >
-            <span className="block text-gray-400 text-[10px]">{s.kind}</span>
-            <span className="text-white font-bold">{s.label}</span>
-          </a>
-        ))}
-      </div>
+      {visibleLinks.length > 0 && (
+        <div className="grid grid-cols-3 gap-2 text-center font-mono text-xs">
+          {visibleLinks.map((l) => {
+            const external = !l.href.startsWith('mailto:')
+            return (
+              <a
+                key={l.label}
+                href={l.href}
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                className="p-2 bg-[#1b2027] hover:bg-[#252c36] rounded border border-gray-700 block transition-colors"
+              >
+                <span className="block text-gray-400 text-[10px]">{l.kind}</span>
+                <span className="text-white font-bold">{l.label}</span>
+              </a>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
