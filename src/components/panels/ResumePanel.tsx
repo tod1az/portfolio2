@@ -24,7 +24,7 @@ export function ResumePanel() {
 
       <div className="griptape p-4 rounded border-2 border-orange-500 text-center space-y-2">
         <h3 className="thps-font text-xl text-white">DOWNLOAD OFFICIAL CV / RESUME</h3>
-        <p className="text-xs text-gray-300 font-sans">
+        <p className="text-xs md:text-sm text-gray-300 font-sans">
           Get the high-resolution printable PDF version with comprehensive project descriptions, references, and
           contact coordinates.
         </p>

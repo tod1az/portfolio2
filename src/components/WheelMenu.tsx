@@ -46,7 +46,7 @@ const SCRATCHES = Array.from({ length: 18 }, (_, i) => {
 
 export function WheelMenu({ active, onSelect }: WheelMenuProps) {
   return (
-    <div className="relative w-72 h-72 my-1 flex items-center justify-center select-none">
+    <div className="relative my-1 flex items-center justify-center select-none w-72 h-72 sm:w-80 sm:h-80 lg:w-[380px] lg:h-[380px] xl:w-[440px] xl:h-[440px]">
       <svg
         viewBox={`0 0 ${SIZE} ${SIZE}`}
         className="absolute inset-0 w-full h-full transition-transform duration-500 ease-out drop-shadow-[0_10px_18px_rgba(0,0,0,0.85)]"
@@ -192,9 +192,9 @@ export function WheelMenu({ active, onSelect }: WheelMenuProps) {
       </svg>
 
       {/* Hub HUD sitting in the bearing hole (does not rotate) */}
-      <div className="relative w-[96px] h-[96px] rounded-full z-20 flex flex-col items-center justify-center p-2 text-center pointer-events-none">
-        <span className="text-[8px] font-mono tracking-widest text-gray-500 uppercase">SELECTED</span>
-        <span className="thps-font text-[11px] sm:text-xs font-black text-cyan-200 drop-shadow-[0_0_8px_#6a6cff] leading-tight">
+      <div className="relative w-[33%] h-[33%] rounded-full z-20 flex flex-col items-center justify-center p-2 text-center pointer-events-none">
+        <span className="text-[8px] lg:text-[10px] font-mono tracking-widest text-gray-500 uppercase">SELECTED</span>
+        <span className="thps-font text-[11px] sm:text-xs lg:text-sm xl:text-base font-black text-cyan-200 drop-shadow-[0_0_8px_#6a6cff] leading-tight">
           {MENU_TITLES[active]}
         </span>
         <span className="w-6 h-0.5 bg-orange-500 mt-1" />

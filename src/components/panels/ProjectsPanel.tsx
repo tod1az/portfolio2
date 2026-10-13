@@ -74,42 +74,44 @@ export function ProjectsPanel() {
         }
       />
 
-      {PROJECTS.map((p) => (
-        <div
-          key={p.title}
-          className={`bg-[#171b21] rounded border-2 border-neutral-700 ${p.accent.hover} transition-colors p-3.5 shadow`}
-        >
-          <div className="flex justify-between items-center mb-1">
-            <span className={`px-2 py-0.5 border text-[10px] font-mono font-bold ${p.accent.mapBadge}`}>{p.map}</span>
-            <span className="text-xs font-mono text-gray-400">{p.meta}</span>
-          </div>
-          <h3 className="thps-font text-lg text-white mt-1">{p.title}</h3>
-          <p className="text-xs text-gray-300 mt-1 font-sans">{p.description}</p>
-          <div className="mt-3 flex items-center justify-between border-t border-neutral-800 pt-2">
-            <div className="flex gap-1">
-              {p.tags.map((t) => (
-                <Tag key={t} bordered={false}>
-                  {t}
-                </Tag>
-              ))}
+      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2">
+        {PROJECTS.map((p) => (
+          <div
+            key={p.title}
+            className={`bg-[#171b21] rounded border-2 border-neutral-700 ${p.accent.hover} transition-colors p-3.5 shadow`}
+          >
+            <div className="flex justify-between items-center mb-1">
+              <span className={`px-2 py-0.5 border text-[10px] font-mono font-bold ${p.accent.mapBadge}`}>{p.map}</span>
+              <span className="text-xs font-mono text-gray-400">{p.meta}</span>
             </div>
-            <div className="flex space-x-2">
-              <a
-                href={p.demoUrl}
-                className={`px-2.5 py-1 ${p.accent.launch} text-black thps-font text-xs rounded font-bold transition-colors`}
-              >
-                LAUNCH
-              </a>
-              <a
-                href={p.repoUrl}
-                className="px-2.5 py-1 bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-xs rounded border border-neutral-600"
-              >
-                CODE
-              </a>
+            <h3 className="thps-font text-lg text-white mt-1">{p.title}</h3>
+            <p className="text-xs md:text-sm text-gray-300 mt-1 font-sans">{p.description}</p>
+            <div className="mt-3 flex items-center justify-between border-t border-neutral-800 pt-2">
+              <div className="flex gap-1">
+                {p.tags.map((t) => (
+                  <Tag key={t} bordered={false}>
+                    {t}
+                  </Tag>
+                ))}
+              </div>
+              <div className="flex space-x-2">
+                <a
+                  href={p.demoUrl}
+                  className={`px-2.5 py-1 ${p.accent.launch} text-black thps-font text-xs rounded font-bold transition-colors`}
+                >
+                  LAUNCH
+                </a>
+                <a
+                  href={p.repoUrl}
+                  className="px-2.5 py-1 bg-neutral-800 hover:bg-neutral-700 text-white font-mono text-xs rounded border border-neutral-600"
+                >
+                  CODE
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }

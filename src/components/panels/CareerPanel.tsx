@@ -87,7 +87,7 @@ export function CareerPanel() {
             </div>
             <span className={`text-[10px] font-mono px-2 py-0.5 rounded border ${s.accent.badge}`}>{s.points}</span>
           </div>
-          <p className="text-xs text-gray-300 mt-2 font-sans leading-relaxed">{s.description}</p>
+          <p className="text-xs md:text-sm text-gray-300 mt-2 font-sans leading-relaxed">{s.description}</p>
           {s.tags.length > 0 && (
             <div className="mt-2.5 flex flex-wrap gap-1">
               {s.tags.map((t) => (

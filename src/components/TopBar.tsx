@@ -5,7 +5,7 @@ interface TopBarProps {
 
 export function TopBar({ soundEnabled, onToggleSound }: TopBarProps) {
   return (
-    <header className="w-full bg-[#181c22] border-b-2 border-orange-600/80 px-4 py-2 flex items-center justify-between shadow-md">
+    <header className="w-full bg-[#181c22] border-b-2 border-orange-600/80 px-4 lg:px-8 py-2 flex items-center justify-between shadow-md">
       <div className="flex items-center space-x-2">
         <span className="inline-block w-2.5 h-2.5 bg-orange-500 rounded-full animate-ping" />
         <span className="font-mono text-xs uppercase text-orange-400 font-bold tracking-widest">SYS.DC-2000 // READY</span>

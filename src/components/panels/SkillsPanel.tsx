@@ -48,11 +48,11 @@ export function SkillsPanel() {
         }
       />
 
-      <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+      <div className="grid grid-cols-2 gap-2 md:gap-3 text-xs font-mono">
         {BLOCKS.map((b) => (
           <div key={b.title} className={`griptape p-3 rounded border ${b.borderClass} shadow`}>
             <span className={`${b.titleClass} font-bold block mb-1`}>{b.title}</span>
-            <ul className="text-gray-300 space-y-1 text-[11px]">
+            <ul className="text-gray-300 space-y-1 text-[11px] md:text-xs">
               {b.items.map((item) => (
                 <li key={item}>• {item}</li>
               ))}
